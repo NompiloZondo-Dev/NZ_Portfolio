@@ -89,7 +89,14 @@
            
         </section>
     </main>
-    <script src="script.js"></script>
+   <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+    
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
   
 
     <footer>
