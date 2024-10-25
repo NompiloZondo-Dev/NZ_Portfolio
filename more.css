@@ -113,7 +113,6 @@ h1 {
 }
 
 #projects {
-    /* background: white; */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -130,7 +129,7 @@ h1 {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
-    width: calc(30% - 20px);
+    width: calc(30% - 20px); 
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -152,15 +151,15 @@ h1 {
     width: 100%; 
     height: auto; 
     max-height: 200px; 
-    object-fit: cover; 
+    object-fit: cover; /
 }
+
 .project-buttons {
     margin-top: -10px;
 }
 
-
 .project-buttons .btn {
-    margin: 65px;
+    margin: 5px; 
     text-decoration: none;
     padding: 10px 15px;
     border: none;
@@ -168,17 +167,10 @@ h1 {
     color: white;
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-bottom: 130px;
 }
 
 .project-buttons .btn:hover {
     background-color: #d80f19;
-}
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
 }
 
 #see-more-btn {
@@ -190,17 +182,39 @@ h1 {
     border-radius: 5px;
     text-decoration: none; 
     margin-top: 20px;
-    margin-left: auto;
-    margin-left: 1350px;
+    margin-left: auto; 
+    margin-right: auto; 
+    width: fit-content; 
 }
 
-#see-more-container {
-    display: flex; 
-    justify-content: space-between; 
-    margin-top: 20px;
-}
 #see-more-btn:hover {
     background-color: #d80f19;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .project-card {
+        width: calc(48% - 20px); 
+    }
+    #see-more-btn {
+        padding: 8px 15px;
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        width: 100%; 
+    }
+    
+    #see-more-btn {
+        padding: 6px 12px;
+    }
+
+    .project-buttons .btn {
+        width: 100%; 
+        padding: 12px; 
+    }
 }
 
 
