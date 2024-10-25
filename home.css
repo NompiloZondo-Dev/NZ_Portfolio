@@ -1,0 +1,254 @@
+
+/* Home page styles */
+body{
+    
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+}
+.header {
+    position: relative; 
+    border-top: 5px solid black; 
+    border-left: 5px solid black; 
+    padding: 20px; 
+}
+
+.header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid black; 
+    border-right: 2px solid black;
+    width: 100%; 
+    height: 100%; 
+    z-index: -1;
+}
+
+.container{
+    background: #f4f4f4;
+    height: 100vh;
+    width: 100%;
+
+}
+.name {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.letter-n {
+    color: #d80f19;
+}
+
+.name span {
+    color: #d80f19; 
+}
+.header{
+    padding: 10px 10%;
+    margin-bottom: 550px;
+}
+nav{
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a {
+    color:black;
+    text-decoration: none;
+    font-size: 22px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width:0;
+    height:3px;
+    background: #d80f19;;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.55s ;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+.header-text{
+    margin-top:15%;
+    font-size:30px;
+    text-align: center;
+  
+}
+.header-text h1{
+    margin-top:20px;
+    font-size:48px;
+    
+}
+.header-text h1 span{
+    color:#d80f19
+    
+}
+.description {
+    font-size: 30px;
+    color:black;
+    margin-top: 10px;
+    max-width: 600px; 
+    text-align: center;
+
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.dot {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+.button-container {
+    margin-top: 20px; 
+}
+
+.button-container button {
+    margin: 0 10px; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 12px;
+}
+.chatbot {
+    display: none; 
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.chatbot-header {
+    background: #282c34;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chatbot-messages {
+    height: 200px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chatbot-messages p {
+    margin: 5px 0;
+}
+.user-message {
+    margin: 5px 0;
+    color: gray; 
+    text-align: right;
+}
+
+.bot-message {
+    margin: 5px 0;
+    color: black; 
+    text-align: left; 
+}
+#chat-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0; 
+        margin: 0;
+    }
+
+    .nav-list.active {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: flex; 
+    }
+
+    ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+
+footer {
+    background-color: #282c34; 
+    color: white;
+    padding: 20px; 
+    text-align: center; 
+}
+
+.footer-content {
+    max-width: 1200px; 
+    margin: auto; 
+    margin-top: 30px;
+}
+
+.socials {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 10px;
+    margin-top: 8px; 
+}
+
+.social-icon {
+    color: white; 
+    font-size: 24px; 
+    text-decoration: none; 
+    transition: color 0.3s;
+
+.social-icon:hover {
+    color: #d80f19; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 15px; 
+    }
+
+    .social-icon {
+        font-size: 20px; 
+    }
+}
+}
