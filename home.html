@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>My Portfolio</title>
+    <style>
+      
+        .scroll-icons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-icon {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+        .scroll-icon:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+    </style>
+</head>
+<body>
+
+    <!---header-->
+    <div class="container">  
+        <div class="header">
+            <nav>
+                <h1 class="name">
+                    <span class="letter-n">N</span>Z.
+                </h1>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="about.html"><i class="fas fa-user"></i> About Me</a></li>
+                    <li><a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p class="subtitle">Software Developer</p>
+                <h1>Hi, I'm <span class="name">Nompilo Zondo</span></h1>
+                <div class="button-container">
+           
+                    <button id="chat-button">Let's Chat</button>
+                    <a href="contact.html"><button>Contact Me</button></a>
+                </div>
+            </div>
+
+            <!-- Chatbot Popup -->
+        <div id="chatbot" class="chatbot">
+            <div class="chatbot-header">
+             <h2>NZ Chatbot</h2>
+            <button id="close-chat">×</button>
+          </div>
+      <div class="chatbot-messages" id="chatbot-messages"></div>
+      <input type="text" id="chat-input" placeholder="Type your message...">
+  </div>
+
+        </div>
+    </div>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+    
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+
+<footer>
+    <div class="footer-content">
+        <div class="socials">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+            <a href="https://github.com/NompiloZondo-Dev " class="social-icon" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+         
+            <a href="https://www.linkedin.com/in/nompilo-zondo-b8757820a/" class="social-icon" aria-label="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        
+        </div>
+    </div>
+</footer>
+
+<div class="scroll-icons">
+    <a href="#top" class="scroll-icon" id="scroll-up">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+    <a href="#bottom" class="scroll-icon" id="scroll-down">
+        <i class="fas fa-chevron-down"></i>
+    </a>
+</div>
+
+<script>
+    document.querySelector('#scroll-up').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    document.querySelector('#scroll-down').addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>
