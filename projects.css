@@ -1,0 +1,239 @@
+.name {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.letter-n {
+    color: #d80f19;
+}
+
+.name span {
+    color: #d80f19; 
+}
+.header{
+    padding: 10px 10%;
+    margin-bottom: 0;
+}
+.header-text{
+    margin-top:20%;
+    font-size:30px;
+    text-align: center;
+  
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.dot {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+nav{
+    display: flex;
+    align-items: center ;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a {
+    color:black;
+    text-decoration: none;
+    font-size: 22px;
+    position: relative;
+    font-weight: 250;
+}
+nav ul li a::after{
+    content: '';
+    width:0;
+    height:3px;
+    background: #d80f19;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.55s ;
+}
+nav ul li a:hover::after{
+    width:100%;
+}
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 0; 
+        margin: 0;
+    }
+
+    .nav-list.active {
+        display: flex; 
+    }
+
+    .menu-toggle {
+        display: flex; 
+    }
+
+    ul li {
+        margin: 10px 0;
+        width: 100%;
+    }
+}
+
+
+
+/* Projects section styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+
+#projects {
+    /* background: white; */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(30% - 20px);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-description {
+    display: none;
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.project-image {
+    width: 100%; /* Make the image fill the width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Limit the height of the image */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+.project-buttons {
+    margin-top: -10px;
+}
+
+.project-buttons .btn {
+    margin: 65px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: none;
+    background-color: #282c34;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-bottom: 130px;
+}
+
+.project-buttons .btn:hover {
+    background-color: #d80f19;
+}
+#see-more-btn {
+    display: inline-block;
+    background-color: black; /* Bootstrap primary color */
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    margin-top: 20px;
+    margin-left: 1350px;
+}
+
+#see-more-btn:hover {
+    background-color: #d80f19;
+}
+
+
+
+
+footer {
+    background-color: #282c34;
+    color: white;
+    padding: 20px; 
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px; 
+    margin: auto; 
+    margin-top: 30px;
+}
+
+.socials {
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; 
+    margin-top: 8px; 
+}
+
+.social-icon {
+    color: white; 
+    font-size: 24px; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.social-icon:hover {
+    color: #d80f19; 
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 15px; 
+    }
+
+    .social-icon {
+        font-size: 20px;
+    }
+}
+
+
