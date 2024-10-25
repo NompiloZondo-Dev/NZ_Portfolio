@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>My Portfolio</title>
+    <style>
+        .scroll-icons {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .scroll-icon {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+        .scroll-icon:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">  
+        <div class="header">
+            <nav>
+                <h1 class="name">
+                    <span class="letter-n">N</span>Z.
+                </h1>
+                <div class="menu-toggle" id="mobile-menu">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <ul class="nav-list">
+                    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="projects.html"><i class="fas fa-briefcase"></i> Projects</a></li>
+                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="About-skills">
+        <div class="container-a">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/me.jpg" alt="User Image">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="heading">About Me</h1>
+                    <p class="text">I'm Nompilo Zondo, an enthusiastic entry-level software developer with a passion for coding and problem-solving. My journey began in high school when I created a simple website for a school project. That experience ignited my love for technology and development.</p>
+                    <p>In 2021, I completed my qualification in software development, where I gained hands-on experience in programming languages such as JavaScript, Java, HTML, CSS, and PHP. One of my favorite projects was building a personal portfolio site, which taught me the importance of clean design and user experience.</p>
+                    <p>I enjoy building responsive web applications and thrive in collaborative environments. My goal is to contribute to innovative projects while continuously expanding my skills in software development. I’m excited to start my career and make a meaningful impact in the tech industry.</p>
+                    
+                    <h2 class="heading">My Tech Stack</h2>
+                    <div class="skills-container">
+                        <div class="skill-card">Java</div>
+                        <div class="skill-card">React</div>
+                        <div class="skill-card">HTML</div>
+                        <div class="skill-card">CSS</div>
+                        <div class="skill-card">PHP</div>
+                        <div class="skill-card">C#</div>
+                        <div class="skill-card">JS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+    
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <div class="socials">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                <a href="https://github.com/NompiloZondo-Dev" class="social-icon" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/nompilo-zondo-b8757820a/" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="scroll-icons">
+        <a href="#top" class="scroll-icon" id="scroll-up">
+            <i class="fas fa-chevron-up"></i>
+        </a>
+        <a href="#bottom" class="scroll-icon" id="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</body>
+</html>
+
