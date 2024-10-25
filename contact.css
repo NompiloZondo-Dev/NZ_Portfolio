@@ -37,7 +37,19 @@ body {
 #see-more-btn:hover {
     background-color: #d80f19;
 }
+@media (max-width: 768px) {
+    #see-more-btn {
+        width: 100%; /* Full width on small screens */
+        padding: 15px; /* Increased padding for better touch targets */
+        margin-left: 0; /* Remove left margin */
+        margin-right: 0; /* Remove right margin */
+    }
 
+    button {
+        width: 100%; /* Full width for buttons on small screens */
+        padding: 12px; /* Adjust padding */
+    }
+}
 .container {
     max-width: 600px; 
     margin: 50px auto; 
