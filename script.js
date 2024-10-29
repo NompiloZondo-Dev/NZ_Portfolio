@@ -1,104 +1,97 @@
 
+document.addEventListener('DOMContentLoaded', () => {
+    const chatButton = document.getElementById('chat-button');
+    const chatbot = document.getElementById('chatbot');
+    const closeChat = document.getElementById('close-chat');
+    const chatInput = document.getElementById('chat-input');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    const chatbotOptions = document.getElementById('chatbot-options');
 
-const chatBody = document.getElementById("chatbot-messages");
-const userInput = document.getElementById("chat-input");
-const chatButton = document.getElementById("chat-button");
-const closeChatButton = document.getElementById("close-chat");
+    chatButton.addEventListener('click', () => {
+        chatbot.style.display = 'block'; // Show the chatbot
+        showWelcomeMessage(); // Show the welcome message
+        showOptions(); // Show options when the chatbot opens
+    });
 
-// Sample responses
-const responses = {
-    "hi": "Hello, I am your VA. How can I help you explore my portfolio ?",
-    "hello": "Hi! , Hello, I am your VA. How can I help you explore my portfolio ?",
-    "what do you do?": "I am a software developer. I create websites and applications.",
-    "help": "Sure! What do you need help with?",
-    "bye": "Goodbye! Have a great day!",
-    "what is your name": "Nompilo",
-    "what are your skills": "I'm skilled in JS,HTML,CSS ,PHP,C#,REACT and JAVA",
-    "projects": "You can view my projects on my projects page",
-    "okay": "Thank you for contacting me.",
-    "contact": "Feel free to contact me on +27684427803 / nompilozondo44@gmail.com",
-};
+    closeChat.addEventListener('click', () => {
+        chatbot.style.display = 'none'; // Hide the chatbot
+    });
 
-function sendMessage() {
-    const userMessage = userInput.value.trim();
-    if (userMessage) {
-        // Append user message
-        const userMessageElement = document.createElement("p");
-        userMessageElement.className = "user-message";
-        userMessageElement.textContent = "You: " + userMessage;
-        chatBody.appendChild(userMessageElement);
-        
-        // Get bot response
-        const botResponse = responses[userMessage.toLowerCase()] || "I'm a bot , please right in a way i can understand.";
-        const botMessageElement = document.createElement("p");
-        botMessageElement.className = "bot-message";
-        botMessageElement.textContent = "Bot: " + botResponse;
-        chatBody.appendChild(botMessageElement);
-
-        // Clear input
-        userInput.value = "";
-        chatBody.scrollTop = chatBody.scrollHeight; // Scroll to bottom
+    function sendMessage(message) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message');
+        messageDiv.textContent = message;
+        chatbotMessages.appendChild(messageDiv);
     }
-}
 
-chatButton.addEventListener("click", function() {
-    document.getElementById('chatbot').style.display = 'flex';
-});
-
-closeChatButton.addEventListener("click", function() {
-    document.getElementById('chatbot').style.display = 'none';
-});
-
-userInput.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-        sendMessage();
+    function showWelcomeMessage() {
+        sendMessage("Welcome to the NZ Chatbot! How can I assist you today? You can click any option below.");
+        welcomeMessageDisplayed = true;
     }
-});
 
-document.getElementById('chat-button').addEventListener('click', function() {
-    document.getElementById('chatbot').style.display = 'flex';
-});
+    function showOptions() {
+        chatbotOptions.innerHTML = `
+            <button class="option" onclick="handleOption('services')">What services do you offer as a software developer?</button>
+            <button class="option" onclick="handleOption('consultation')">How can I book a consultation to discuss my project?</button>
+            <button class="option" onclick="handleOption('technologies')">What programming languages and technologies do you specialize in?</button>
+            <button class="option" onclick="handleOption('resources')">Can you recommend any resources for learning programming?</button>
+            <button class="option" onclick="handleOption('timeline')">What is the expected timeline for my project?</button>
+        `;
+    }
+    
+    window.handleOption = function(option) {
 
-document.getElementById('close-chat').addEventListener('click', function() {
-    document.getElementById('chatbot').style.display = 'none';
-});
-
-document.getElementById('chat-input').addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        const input = e.target.value;
-        if (input.trim() !== '') {
-            const message = document.createElement('p');
-            message.textContent = 'You: ' + input;
-            document.getElementById('chatbot-messages').appendChild(message);
-            e.target.value = ''; // Clear input
-
-            // Simulate a bot response
-            setTimeout(() => {
-                const botResponse = document.createElement('p');
-                botResponse.textContent = 'Bot: Hello, I am your VA. How can I help you explore my portfolio ?';
-                document.getElementById('chatbot-messages').appendChild(botResponse);
-            }, 1000);
-            
+        if (welcomeMessageDisplayed) {
+            // Clear the welcome message if it was displayed
+            chatbotMessages.innerHTML = '';
+            welcomeMessageDisplayed = false;
         }
-    }
-    if (e.key === 'Enter') {
-        const input = e.target.value;
-        if (input.trim() !== '') {
-            const message = document.createElement('p');
-            message.textContent = 'You: ' + "What is your name";
-            document.getElementById('chatbot-messages').appendChild(message);
-            e.target.value = ''; // Clear input
-
-            // Simulate a bot response
-            setTimeout(() => {
-                const botResponse = document.createElement('p');
-                botResponse.textContent = 'Bot: Nompilo !';
-                document.getElementById('chatbot-messages').appendChild(botResponse);
-            }, 1000);
-            
+        switch (option) {
+            case 'services':
+                sendMessage("I offer services such as web development, mobile app development, and software consulting.");
+                break;
+            case 'consultation':
+                sendMessage("You can book a consultation by filling out the form on my website or contacting me directly.");
+                break;
+            case 'technologies':
+                sendMessage("I specialize in JavaScript, Python, and Java, along with frameworks like React and Django.");
+                break;
+            case 'resources':
+                sendMessage("I recommend platforms like Coursera and freeCodeCamp for learning programming.");
+                break;
+            case 'timeline':
+                sendMessage("The timeline for your project will depend on its scope. Let's discuss it in detail.");
+                break;
+            default:
+                sendMessage("I'm not sure about that. Can you provide more details?");
         }
+        sendMessage(response);
+        showBackToOptionsButton(); // Show the back button after the response
+    };
+    
+    function showBackToOptionsButton() {
+        const backButton = document.createElement('button');
+        backButton.textContent = 'Back to Options';
+        backButton.classList.add('back-button');
+        backButton.onclick = function() {
+            chatbotOptions.innerHTML = ''; // Clear the back button
+            showOptions(); // Show main options again
+        };
+        chatbotMessages.appendChild(backButton);
     }
+
+    chatInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const userMessage = chatInput.value;
+            sendMessage(userMessage);
+            chatInput.value = '';
+            // Optionally show options again after a message
+            showOptions();
+        }
+    });
 });
+
+
 
 function toggleDetails(projectId) {
     const description = document.getElementById(projectId);
