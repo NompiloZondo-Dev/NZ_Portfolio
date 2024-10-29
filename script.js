@@ -1,5 +1,4 @@
 
-
 function toggleDetails(projectId) {
     const description = document.getElementById(projectId);
     description.style.display = description.style.display === 'none' || description.style.display === '' ? 'block' : 'none';
