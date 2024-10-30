@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 sendMessage("You can book a consultation by filling out the form on my website or contacting me directly.");
                 break;
             case 'technologies':
-                sendMessage("I specialize in JavaScript, Python, and Java, along with frameworks like React and Django.");
+                sendMessage("I specialize in JavaScript, and Java, along with frameworks like React.");
                 break;
             case 'resources':
                 sendMessage("I recommend platforms like Coursera and freeCodeCamp for learning programming.");
