@@ -25,14 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showWelcomeMessage() {
-        sendMessage("Welcome to the NZ Chatbot! How can I assist you today? You can click any option below.");
+        sendMessage("Welcome to NZ Chatbot! How can I assist you today? You can click any option below.");
         welcomeMessageDisplayed = true;
     }
 
     function showOptions() {
         chatbotOptions.innerHTML = `
             <button class="option" onclick="handleOption('services')">What services do you offer as a software developer?</button>
-            <button class="option" onclick="handleOption('consultation')">How can I book a consultation to discuss my project?</button>
             <button class="option" onclick="handleOption('technologies')">What programming languages and technologies do you specialize in?</button>
             <button class="option" onclick="handleOption('resources')">Can you recommend any resources for learning programming?</button>
             <button class="option" onclick="handleOption('timeline')">What is the expected timeline for my project?</button>
@@ -50,9 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'services':
                 sendMessage("I offer services such as web development, mobile app development, and software consulting.");
                 break;
-            case 'consultation':
-                sendMessage("You can book a consultation by filling out the form on my website or contacting me directly.");
-                break;
+            // case 'consultation':
+            //     sendMessage("You can book a consultation by filling out the form on my website or contacting me directly.");
+            //     break;
             case 'technologies':
                 sendMessage("I specialize in JavaScript, and Java, along with frameworks like React.");
                 break;
