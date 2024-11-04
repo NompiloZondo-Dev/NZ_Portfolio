@@ -140,10 +140,7 @@ nav ul li a:hover::after{
     flex-direction: column;
     z-index: 1000;
 }
-.chatbot-header h2{
-    height: 10px;
-    margin-bottom: 7px;
-}
+
 .chatbot-header {
     background: #282c34;
     color: white;
@@ -181,10 +178,6 @@ nav ul li a:hover::after{
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-}
-.close-chat{
- height: 5px;
-
 }
 
 /* Responsive styles */
@@ -318,3 +311,4 @@ footer {
     color: black; 
     text-align: left; 
 }
+
