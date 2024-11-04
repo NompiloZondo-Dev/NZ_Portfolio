@@ -1,4 +1,5 @@
 
+
 document.addEventListener('DOMContentLoaded', () => {
     const chatButton = document.getElementById('chat-button');
     const chatbot = document.getElementById('chatbot');
